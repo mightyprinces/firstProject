@@ -116,15 +116,15 @@ gulp.task('watch', function(){
     watch([path.watch.style], function(event, cb) {
         gulp.start('style:build');
     });
-    watch([path.watch.js], function(event, cb) {
-        gulp.start('js:build');
-    });
+    // watch([path.watch.js], function(event, cb) {
+    //     gulp.start('js:build');
+    // });
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
     });
-    watch([path.watch.php], function(event, cb) {
-        gulp.start('php:build');
-    });
+    // watch([path.watch.php], function(event, cb) {
+    //     gulp.start('php:build');
+    // });
 });
 
 gulp.task('webserver', function () {
