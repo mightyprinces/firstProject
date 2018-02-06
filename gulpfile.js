@@ -21,21 +21,18 @@ var path = {
         html: 'build/',
         css: 'build/css/',
         img: 'build/img/'
-        // php: 'build/form/'
         // js: 'build/js/',
     },
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        // js: 'src/js/build.js',//В стилях и скриптах нам понадобятся только build файлы
         style: 'src/styles/build.less',
-        img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        // php: 'src/form/*.php'
+        img: 'src/img/**/*.*' //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        // js: 'src/js/build.js',//В стилях и скриптах нам понадобятся только build файлы
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'src/**/*.html',
         style: 'src/styles/**/*.less',
         img: 'src/img/**/*.*'
-        // php: 'src/form/*.php'
         // js: 'src/js/**/*.js',
     },
     clean: './build'
@@ -69,14 +66,6 @@ gulp.task('js:build', function () {
         .pipe(reload({stream: true})); //И перезагрузим сервер
 });
 
-gulp.task('php:build', function () {
-    gulp.src(path.src.php) //Найдем наш main файл
-        .pipe(sourcemaps.init()) //Инициализируем sourcemap
-        .pipe(sourcemaps.write()) //Пропишем карты
-        .pipe(gulp.dest(path.build.php)) //Выплюнем готовый файл в build
-        .pipe(reload({stream: true})); //И перезагрузим сервер
-});
-
 gulp.task('style:build', function () {
     gulp.src(path.src.style) //Выберем наш main.scss
         .pipe(sourcemaps.init()) //То же самое что и с js
@@ -106,7 +95,6 @@ gulp.task('build', [
     'style:build',
     'image:build'
     // 'js:build',
-    // 'php:build',
 ]);
 
 gulp.task('watch', function(){
@@ -116,14 +104,11 @@ gulp.task('watch', function(){
     watch([path.watch.style], function(event, cb) {
         gulp.start('style:build');
     });
-    // watch([path.watch.js], function(event, cb) {
-    //     gulp.start('js:build');
-    // });
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
     });
-    // watch([path.watch.php], function(event, cb) {
-    //     gulp.start('php:build');
+    // watch([path.watch.js], function(event, cb) {
+    //     gulp.start('js:build');
     // });
 });
 
@@ -135,4 +120,4 @@ gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
 });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build', 'watch', 'webserver']);
