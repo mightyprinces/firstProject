@@ -20,19 +20,22 @@ var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
         html: 'build/',
         css: 'build/css/',
-        img: 'build/img/'
+        img: 'build/img/',
+        font: 'build/fonts/'
         // js: 'build/js/',
     },
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         style: 'src/styles/build.less',
-        img: 'src/img/**/*.*' //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+        font: 'src/fonts/**/*.*'
         // js: 'src/js/build.js',//В стилях и скриптах нам понадобятся только build файлы
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'src/**/*.html',
         style: 'src/styles/**/*.less',
-        img: 'src/img/**/*.*'
+        img: 'src/img/**/*.*',
+        font: 'src/fonts/**/*.*'
         // js: 'src/js/**/*.js',
     },
     clean: './build'
@@ -52,6 +55,12 @@ gulp.task('html:build', function () {
     gulp.src(path.src.html) //Выберем файлы по нужному пути
         .pipe(rigger()) //Прогоним через rigger
         .pipe(gulp.dest(path.build.html)) //Выплюнем их в папку build
+        .pipe(reload({stream: true})); //И перезагрузим наш сервер для обновлений
+});
+
+gulp.task('font:build', function () {
+    gulp.src(path.src.font) //Выберем файлы по нужному пути
+        .pipe(gulp.dest(path.build.font)) //Выплюнем их в папку build
         .pipe(reload({stream: true})); //И перезагрузим наш сервер для обновлений
 });
 
@@ -93,7 +102,8 @@ gulp.task('image:build', function () {
 gulp.task('build', [
     'html:build',
     'style:build',
-    'image:build'
+    'image:build',
+    'font:build'
     // 'js:build',
 ]);
 
@@ -106,6 +116,9 @@ gulp.task('watch', function(){
     });
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
+    });
+    watch([path.watch.font], function(event, cb) {
+        gulp.start('font:build');
     });
     // watch([path.watch.js], function(event, cb) {
     //     gulp.start('js:build');
