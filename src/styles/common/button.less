@@ -1,6 +1,25 @@
-@color-btn-border-grey: @color-grey-dark;
+@color-btn-border-grey: @color-grey-base;
+@color-btn-bg-gradient: linear-gradient(270deg, #f7395f 0%, #fe702e 100%);
 
 .f-btn {
-  background-color: lighten(@color-orange, 20%);
   font-family: "Roboto","Helvetica",Arial,sans-serif;
+  font-weight: 600;
+  font-size: @font-size-12;
+  text-transform: uppercase;
+  min-height: 41px;
+  min-width: 128px;
+  padding: 6px 10px;
+  text-align: center;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 30px;
+
+  &.f-btn-default {
+    border: 2px @color-btn-border-grey solid;
+  }
+
+  &.f-btn-gradient {
+    background: @color-btn-bg-gradient; 
+    color: @color-white;
+  }
 }
