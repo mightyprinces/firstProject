@@ -1,5 +1,6 @@
 @color-btn-border-grey: @color-grey-base;
 @color-btn-bg-gradient: linear-gradient(270deg, #f7395f 0%, #fe702e 100%);
+@color-btn-super-grey:   #403D39;
 
 .f-btn {
   font-family: "Roboto","Helvetica",Arial,sans-serif;
@@ -14,12 +15,64 @@
   background-color: transparent;
   border-radius: 30px;
 
-  &.f-btn-default {
+  &.f-btn-grey {
     border: 2px @color-btn-border-grey solid;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: @color-grey-base;
+      color: rgba(255, 255, 255, 0.8);
+      border-color: @color-grey-base;
+    }
   }
 
   &.f-btn-gradient {
-    background: @color-btn-bg-gradient; 
+    background: @color-btn-bg-gradient;
     color: @color-white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: @color-btn-super-grey;
+    }
+  }
+
+  &.f-btn-white {
+    border: 2px @color-white solid;
+    color: @color-white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: @color-white;
+      color: @color-btn-super-grey;
+    }
   }
 }
+
+// .f-btn {
+//   font-family: "Roboto","Helvetica",Arial,sans-serif;
+//   font-weight: 600;
+//   font-size: 12px;
+//   text-transform: uppercase;
+//   min-height: 41px;
+//   min-width: 128px;
+//   padding: 6px 10px;
+//   text-align: center;
+//   white-space: nowrap;
+//   background-color: transparent;
+//   border-radius: 30px;
+// }
+
+// .f-btn.f-btn-grey {
+//   border: 2px #66615b solid;
+// }
+
+// .f-btn.f-btn-grey:hover,
+// .f-btn.f-btn-grey:active,
+// .f-btn.f-btn-grey:focus {
+//   background-color: #66615b;
+//   color: rgba(255, 255, 255, 0.8);
+//   border-color: #66615b;
+// }
