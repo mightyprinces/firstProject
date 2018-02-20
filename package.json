@@ -1,7 +1,7 @@
 {
   "name": "FirstProject",
   "title": "FirstProject",
-  "version": "1",
+  "version": "1.0.0",
   "homepage": "http://startbootstrap.com/template-overviews/agency",
   "author": "Kristina",
   "license": {
@@ -32,3 +32,4 @@
     "gulp": "^3.9.1"
   }
 }
+
