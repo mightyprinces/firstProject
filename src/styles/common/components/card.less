@@ -1,18 +1,66 @@
+@color-icon-grey:       #888;
+@color-icon-grey-light: #B4B0B0;
+@color-icon-green:      #a4c639;
+@color-icon-blue:       #0078d7;
+
+
+/** Example:
+*  <div class="f-card f-apple">
+*    <div class="f-card-icon">
+*      <i class="fab fa-apple fa-4x"></i>
+*    </div>
+*    <div class="f-card-info">
+*      <h4>Download</h4>
+*      <p class="u-txt-grey">Download from App Store</p>
+*    </div>
+*  </div>
+*/
+
 .f-card {
   background-color: @color-white;
   color: @color-grey-base;
   text-align: left;
   box-shadow: @box-shadow-base;
   border-radius: @border-radius-base;
+  padding: @space-base;
+
+  h4 {
+    padding-bottom: @space-small;
+    font-size: @font-size-22;
+    font-family: @font-family-dosis;
+    color: @color-grey-darker;
+  }
 
   &-icon {
-
+    padding-right: @space-20;
+    color: @color-icon-grey;
   }
+
   &-info {
 
   }
+
+  :hover {
+    cursor: pointer;
+  }
+
+  // For desktop
   @media (min-width: @screen-md) {
     display: flex;
     flex-direction: row;
   }
 }
+
+// Hover color for icon in f-card
+.f-apple:hover .f-card-icon {
+  color: @color-icon-grey-light;
+}
+
+.f-android:hover .f-card-icon {
+  color: @color-icon-green;
+}
+
+.f-windows:hover .f-card-icon {
+  color: @color-icon-blue;
+}
+
