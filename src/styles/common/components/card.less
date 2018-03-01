@@ -19,10 +19,11 @@
 .f-card {
   background-color: @color-white;
   color: @color-grey-base;
-  text-align: left;
+  text-align: center;
   box-shadow: @box-shadow-base;
   border-radius: @border-radius-base;
   padding: @space-base;
+  transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
 
   h4 {
     padding-bottom: @space-small;
@@ -40,14 +41,17 @@
 
   }
 
-  :hover {
+  &:hover {
     cursor: pointer;
+    transform: translateY(-10px);
+    box-shadow: @box-shadow-hover;
   }
 
   // For desktop
   @media (min-width: @screen-md) {
     display: flex;
     flex-direction: row;
+    text-align: left;
   }
 }
 
