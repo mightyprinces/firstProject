@@ -23,7 +23,6 @@
   box-shadow: @box-shadow-base;
   border-radius: @border-radius-base;
   padding: @space-base;
-  transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
 
   h4 {
     padding-bottom: @space-small;
@@ -33,28 +32,51 @@
   }
 
   &-icon {
-    padding-right: @space-20;
     color: @color-icon-grey;
+  }
+
+  &-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
   }
 
   &-info {
 
   }
 
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-10px);
-    box-shadow: @box-shadow-hover;
-  }
-
   // For desktop
   @media (min-width: @screen-md) {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
+    &-icon,
+    &-img {
+      margin-right: @space-20;
+    }
+
+    &-row {
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+      align-items: center;
+      align-content: center;
+      justify-content: flex-start;
+    }
   }
 }
 
+.f-animate {
+  transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+    box-shadow: @box-shadow-hover;
+  }
+}
+
+
+/*
+* For download component
+*/
 // Hover color for icon in f-card
 .f-apple:hover .f-card-icon {
   color: @color-icon-grey-light;
