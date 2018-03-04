@@ -2,21 +2,45 @@
   color: @color-grey-light;
 }
 
-.u-txt-center {
-  text-align: center;
+.u-txt {
+
+  // Align text
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  // Size text
+  &-large {
+    font-size: @font-size-38;
+  }
 }
 
 // Spacing
-.u-padding-top {
-  &-base {
-    padding-top: @space-base;
+.u-padding {
+  &-top {
+    &-base {
+      padding-top: @space-base;
+    }
+    &-double {
+      padding-top: @space-double;
+    }
   }
-  &-double {
-    padding-top: @space-double;
+
+  &-bottom-20 {
+    padding-bottom: @space-20;
   }
 }
 
 // Background
 .u-bg-grey {
   background-color: @color-grey-lighter;
+}
+
+.u-bg-gradient {
+  background: @color-orange-gradient;
+  color: @color-white;
 }
