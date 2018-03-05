@@ -46,15 +46,37 @@
   }
 
   &-head {
-
+    color: @color-grey-darker;
+    font-family: @font-family-dosis;
+    font-size: @font-size-19;
+    padding-bottom: @space-medium;
   }
 
   &-body {
 
+    li {
+      list-style-type: none;
+      border-bottom: 1px dashed @color-grey-lightest;
+      padding: @space-medium 0;
+    }
   }
 
   &-footer {
+    p {
+      padding: @space-medium 0;
+    }
 
+    a {
+      color: @color-grey-light;
+      font-size: @font-size-13;
+      font-family: @font-family-roboto;
+      opacity: 0.75;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   // For desktop
@@ -115,8 +137,10 @@
 .f-price {
   font-family: @font-family-dosis;
   font-size: @font-size-22;
+  color: @color-grey-darker;
   margin: 0 -@space-base;
   padding: 28px 0; // 28px - top, bottom; 0 - left, right
+  background-color: @color-white;
 
   sup {
     vertical-align: top;
