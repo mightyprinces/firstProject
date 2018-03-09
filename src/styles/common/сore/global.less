@@ -26,6 +26,19 @@ h3 {
   font-size: @font-size-39;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.f-link-dashed {
+  border-bottom: 1px dashed;
+
+  &:hover {
+    border-bottom-color: transparent;
+  }
+}
+
 body {
   color: @color-grey-base;
   line-height: normal;
@@ -49,4 +62,28 @@ section {
     }
   }
 }
+
+// Footer
+.f-footer {
+  background-color: @color-grey-darker;
+  color: @color-grey-lightest;
+  height: 207px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  &-social {
+    a {
+      color: @color-white;
+    }
+  }
+
+
+}
+
+
+
+
 

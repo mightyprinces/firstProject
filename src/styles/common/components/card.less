@@ -103,17 +103,6 @@
 
 }
 
-// Animate bounce
-.f-animate {
-  transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
-
-  &:hover {
-    transform: translateY(-10px);
-    cursor: pointer;
-    box-shadow: @box-shadow-hover;
-  }
-}
-
 
 /*
 * For download component
@@ -135,23 +124,27 @@
 * For price component
 */
 .f-price {
-  font-family: @font-family-dosis;
-  font-size: @font-size-22;
-  color: @color-grey-darker;
-  margin: 0 -@space-base;
-  padding: 28px 0; // 28px - top, bottom; 0 - left, right
-  background-color: @color-white;
-
-  sup {
-    vertical-align: top;
+  .f-card {
+    box-shadow: @box-shadow-around;
   }
 
-  span {
-    line-height: 33px;
+  &-sum {
+    font-family: @font-family-dosis;
+    font-size: @font-size-22;
+    color: @color-grey-darker;
+    margin: 0 -@space-base;
+    padding: 28px 0; // 28px - top, bottom; 0 - left, right
+    background-color: @color-white;
+
+    sup {
+      vertical-align: top;
+    }
+
+    span {
+      line-height: 33px;
+    }
   }
 }
-
-
 
 
 
