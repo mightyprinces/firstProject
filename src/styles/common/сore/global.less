@@ -52,8 +52,47 @@ img {
 
 // Header
 .f-head {
-  display: inline-block;
-  width: 100%;
+  text-transform: uppercase;
+  padding: @space-20 0;
+
+  &-row {
+    .mixin-flex-row;
+    .mixin-flex-start-center;
+  }
+
+  .f-logo {
+    font-family: @font-family-dosis;
+    font-size: 24px;
+    white-space: nowrap;
+    .mixin-flex-row;
+    .mixin-flex-start-center;
+
+    span {
+      padding-left: @space-20;
+    }
+  }
+
+  .f-nav {
+    font-size: @font-size-12;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+
+    &-item {
+      &:not(:first-child) {
+        padding-left: 20px;
+      }
+
+      a {
+        opacity: .8;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
 
   &.js-head-fixed {
     position: fixed;
@@ -94,11 +133,6 @@ section {
       padding: 0 @space-20;
     }
   }
-
-
 }
-
-
-
 
 
