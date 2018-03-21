@@ -21,22 +21,22 @@ var path = {
         html: 'build/',
         css: 'build/css/',
         img: 'build/img/',
-        font: 'build/fonts/'
-        // js: 'build/js/',
+        font: 'build/fonts/',
+        js: 'build/js/',
     },
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         style: 'src/styles/build.less',
         img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        font: 'src/fonts/**/*.*'
-        // js: 'src/js/build.js',//В стилях и скриптах нам понадобятся только build файлы
+        font: 'src/fonts/**/*.*',
+        js: 'src/js/**/*.js',//В стилях и скриптах нам понадобятся только build файлы
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'src/**/*.html',
         style: 'src/styles/**/*.less',
         img: 'src/img/**/*.*',
-        font: 'src/fonts/**/*.*'
-        // js: 'src/js/**/*.js',
+        font: 'src/fonts/**/*.*',
+        js: 'src/js/**/*.js',
     },
     clean: './build'
 };
@@ -103,8 +103,8 @@ gulp.task('build', [
     'html:build',
     'style:build',
     'image:build',
-    'font:build'
-    // 'js:build',
+    'font:build',
+    'js:build',
 ]);
 
 gulp.task('watch', function(){
@@ -120,9 +120,9 @@ gulp.task('watch', function(){
     watch([path.watch.font], function(event, cb) {
         gulp.start('font:build');
     });
-    // watch([path.watch.js], function(event, cb) {
-    //     gulp.start('js:build');
-    // });
+    watch([path.watch.js], function(event, cb) {
+        gulp.start('js:build');
+    });
 });
 
 gulp.task('webserver', function () {
