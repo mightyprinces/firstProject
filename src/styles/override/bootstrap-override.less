@@ -1,8 +1,44 @@
 @border-radius-img: 12px;
 @box-shadow-carousel: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
 
+// Override carousel
 .carousel {
   border-radius: @border-radius-img;
   overflow: hidden;
   box-shadow: @box-shadow-carousel;
+
+  &-control {
+    text-shadow: none;
+
+    &.right,
+    &.left {
+      background-image: none;
+      opacity: 0;
+      transition: opacity 300ms linear;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-indicators {
+    li,
+    .active {
+      width: 30px;
+      height: 3px;
+    }
+
+    li {
+      border-color: transparent;
+      border-radius: 0;
+      background-color: @color-white;
+
+      &.active {
+        background-color: @color-orange;
+        margin: 1px;
+      }
+    }
+  }
+
 }
