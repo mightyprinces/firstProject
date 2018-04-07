@@ -7,19 +7,33 @@
   overflow: hidden;
   box-shadow: @box-shadow-carousel;
 
+  &:hover {
+    .carousel-control {
+      &.right,
+      &.left {
+        opacity: 1;
+      }
+    }
+  }
+
   &-control {
     text-shadow: none;
+
+    .glyphicon-chevron-left {
+      left: 20%;
+    }
+
+    .glyphicon-chevron-right {
+      right: 20%;
+    }
 
     &.right,
     &.left {
       background-image: none;
       opacity: 0;
       transition: opacity 300ms linear;
-
-      &:hover {
-        opacity: 1;
-      }
     }
+
   }
 
   &-indicators {
@@ -38,6 +52,10 @@
         background-color: @color-orange;
         margin: 1px;
       }
+    }
+
+    @media screen and (min-width: @screen-sm) {
+      bottom: 0;
     }
   }
 
