@@ -12,10 +12,19 @@
   font-style: normal;
 }
 
-.f-title {
-  color: @color-grey-darkest;
-  font-family: @font-family-dosis;
-  margin-bottom: 25px;
+body {
+  color: @color-grey-base;
+  line-height: normal;
+  font-size: @font-size-base;
+  font-family: @font-family-roboto;
+}
+
+p {
+  line-height: 24px;
+}
+
+img {
+  max-width: 100%;
 }
 
 h1 {
@@ -31,23 +40,18 @@ a {
   color: inherit;
 }
 
+.f-title {
+  color: @color-grey-darkest;
+  font-family: @font-family-dosis;
+  margin-bottom: 25px;
+}
+
 .f-link-dashed {
   border-bottom: 1px dashed;
 
   &:hover {
     border-bottom-color: transparent;
   }
-}
-
-body {
-  color: @color-grey-base;
-  line-height: normal;
-  font-size: @font-size-base;
-  font-family: @font-family-roboto;
-}
-
-img {
-  max-width: 100%;
 }
 
 // Header
@@ -104,8 +108,6 @@ img {
     z-index: 2;
   }
 }
-
-
 
 // Section
 section {
