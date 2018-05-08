@@ -4,10 +4,16 @@
         Table
       </h3>
 
-      <table>
+      <table border="3" rules="all">
         <caption>
           Заголовок таблицы
         </caption>
+        <colgroup>
+          <col style="width: 50px"/>
+          <col/>
+          <col/>
+          <col style="width: 150px"/>
+        </colgroup>
         <thead>
           <tr>
             <th>Col1</th>
@@ -34,6 +40,71 @@
             <td>ccc</td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td>edqw</td>
+            <td>fefe</td>
+            <td>ghrth</td>
+            <td>thrth</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <hr>
+      <h3 class="f-title">
+        Table 2
+      </h3>
+
+      <table class="table2">
+        <caption>
+          Заголовок таблицы 2
+        </caption>
+        <tbody>
+          <!-- Row1 -->
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+          </tr>
+
+          <!-- Row2 -->
+          <tr>
+            <td colspan="2">1</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+          </tr>
+
+          <!-- Row3 -->
+          <tr>
+            <td colspan="3">1</td>
+            <td>4</td>
+            <td rowspan="3">5</td>
+            <td>6</td>
+          </tr>
+
+          <!-- Row4 -->
+          <tr>
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+          </tr>
+
+          <!-- Row5 -->
+          <tr>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+
       </table>
 
   </div>
