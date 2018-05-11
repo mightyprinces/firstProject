@@ -1,3 +1,16 @@
+/*
+* Mixins
+*/
+.mixin-td-blue {
+  background-color: #9fe4ec;
+  color: #05606f;
+  border-color: #05606f;
+}
+
+
+/*
+* Table
+*/
 table {
   width: 100%;
   table-layout: fixed;
@@ -20,27 +33,21 @@ tbody {
   text-align: center;
 }
 
+
+// Table 3
 .table3 {
-  tr:nth-child(1), tr:nth-child(2) {
-    background-color: #9fe4ec;
-    color: #05606f;
-    border-color: #05606f;
+  thead td {
+    .mixin-td-blue;
   }
 
   td {
     border: 2px solid black;
     text-align: center;
-  }
-
-  .groupnums {
-    text-align: right;
-    background-color: #9fe4ec;
-    color: #05606f;
-    border-color: #05606f;
-  }
-
-  tbody {
     background-color: #fff;
+  }
+
+  .td-blue {
+    .mixin-td-blue;
   }
 
   caption {
